@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Task Master - Manage Your Tasks',
-  description: 'A professional task management application',
+  title: 'Tethered - Hire World-Class Overseas Talent | Reduce Payroll Costs by 80%',
+  description: 'Hire world-class overseas talent and reduce payroll costs by up to 80%. Our rigorous vetting process filters out 99.7% of candidates so you skip the guesswork, hire faster, and cut payroll costs.',
 }
 
 export default function RootLayout({
