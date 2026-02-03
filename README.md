@@ -1,117 +1,135 @@
-# 🎨 Next.js Frontend: The Perfect Match for Your [FastAPI Backend](https://github.com/Bradd3rs/full-stack-starter-backend)!
+# 🌐 Tethered - Global Talent Recruiting Platform
 
-Hey there, awesome developer! 👋 Welcome to this super slick Next.js frontend that pairs perfectly with the FastAPI + PostgreSQL backend. No complicated setup, no headaches - just a beautiful UI that connects to your API in minutes!
+A modern, beautiful Next.js landing page for Tethered, a global talent recruiting platform that connects companies with world-class remote professionals.
 
-## ✨ What's in the Box?
+## ✨ Features
 
-- 🚀 **Next.js 15** - The React framework that makes frontend development a breeze!
-- ⚛️ **React 19** - The latest and greatest React goodness
-- 🔷 **TypeScript** - Because types are your friends, not enemies
-- 🎭 **Tailwind + Radix UI** - Beautiful components without the styling headaches
-- 🌗 **Dark Mode** - Because your eyes deserve some love too
-- 🔄 **SWR** - Magical data fetching that just works
-- 🔌 **API Integration** - Pre-configured to talk to your FastAPI backend
+- 🎨 **Modern Design** - Clean, minimalist design with pixel art hero image
+- 🎯 **Orange Color Scheme** - Solid orange accents throughout for a cohesive brand experience
+- 📱 **Fully Responsive** - Looks great on all devices
+- ⚡ **Next.js 15** - Built with the latest Next.js features
+- 🔷 **TypeScript** - Fully typed for better developer experience
+- 🎭 **Tailwind CSS + shadcn/ui** - Beautiful, accessible UI components
+- 🖼️ **Image Optimization** - Automatic image fallbacks and optimization
 
-## 🏁 Getting Started in 3... 2... 1...
+## 🏁 Getting Started
 
-### 1. Grab the Code & Install Dependencies
+### 1. Install Dependencies
 
 ```bash
-# Clone this beauty
-git clone https://github.com/Bradd3rs/full-stack-starter-frontend
-cd full-stack-starter-frontend
-
-# Install the goodies
 npm install
-# or use yarn/pnpm if that's your jam!
+# or
+yarn install
 ```
 
-### 2. Connect to Your Backend (Just One File!)
-
-Create a `.env.local` file with this single line:
-
-```
-API_URL=http://localhost:8000/api/v1
-```
-
-That's it! This points to your FastAPI backend running on the default port. 🔌
-
-### 3. Fire It Up!
+### 2. Run Development Server
 
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-Now open [http://localhost:3000](http://localhost:3000) and marvel at your creation! ✨
+Open [http://localhost:3000](http://localhost:3000) to see the site!
 
-## 🤝 Playing Nice with Your FastAPI Backend
+## 🎨 Design Highlights
 
-This frontend is designed to work seamlessly with the [full-stack-starter-backend](https://github.com/Bradd3rs/full-stack-starter-backend).
+### Hero Section
+- Split layout with text on the left and pixel art image on the right
+- Square aspect ratio for the hero image
+- Clean typography with refined spacing
 
-For setup instructions and more details, please visit the backend repository. Once you have the backend running, your API will be available at http://localhost:8000.
+### Color Palette
+- **Primary**: Orange (`orange-500`, `orange-600`)
+- **Background**: Light orange tint (`orange-50`)
+- **Text**: Slate grays for readability
+- **Accents**: Solid orange throughout (no gradients)
 
-## 🔄 How the Magic Happens
+### Key Sections
+1. **Hero** - Main value proposition with pixel art visual
+2. **Mission** - Company mission and vision
+3. **How It Works** - Three-step process (Target, Recruit, Validate)
+4. **Talent Showcase** - Featured candidates with profiles
+5. **Testimonials** - Client success stories
+6. **CTA** - Call-to-action for getting started
+7. **Newsletter** - Salary guide signup form
 
-### Todo API - Ready to Use!
-
-The frontend already knows how to talk to these endpoints:
-
-- `GET /api/v1/todos` - Fetch all your todos
-- `POST /api/v1/todos` - Create a new todo
-- `GET /api/v1/todos/{todo_id}` - Get a specific todo
-- `PUT /api/v1/todos/{todo_id}` - Update a todo
-- `DELETE /api/v1/todos/{todo_id}` - Make a todo disappear!
-
-### 🧙‍♂️ The Code Does the Heavy Lifting
-
-We've already set up the API integration for you! Check out how clean this is:
-
-```typescript
-// This is already implemented in the app!
-const fetchTodos = async () => {
-  const response = await fetch('/api/todos')
-  return response.json()
-}
-```
-
-## 📁 Project Structure - Simple & Clean
+## 📁 Project Structure
 
 ```
 full-stack-starter-frontend/
-├── app/                    # Next.js app directory
-│   ├── api/                # API routes (talks to your backend)
-│   │   └── todos/          # Todo API endpoints
-│   ├── page.tsx            # Main application page
-│   └── layout.tsx          # Root layout component
-├── components/             # React components
-│   ├── ui/                 # UI components
-│   └── todo-list.tsx       # Todo list component
-├── lib/                    # Utility functions
-├── types/                  # TypeScript type definitions
-├── .env.local              # Just one environment variable!
-└── package.json            # Project dependencies
+├── app/
+│   ├── page.tsx            # Main landing page
+│   ├── layout.tsx          # Root layout with metadata
+│   └── globals.css          # Global styles
+├── components/
+│   ├── ui/                  # shadcn/ui components
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   └── input.tsx
+│   └── image-with-fallback.tsx  # Image component with fallback
+├── public/
+│   └── hero-background.jpg  # Pixel art hero image
+├── lib/
+│   └── utils.ts            # Utility functions
+└── types/                  # TypeScript definitions
 ```
 
-## 🚀 Deployment - As Easy as Development
+## 🚀 Deployment
 
-### Deploy on Vercel in 4 Clicks
+### Deploy on Vercel
 
-1. Push to GitHub/GitLab/BitBucket
+1. Push your code to GitHub
 2. Import to [Vercel](https://vercel.com/new)
-3. Set the `API_URL` environment variable
-4. Click "Deploy" 🚀
+3. Click "Deploy" 🚀
 
-That's literally it! No complex configuration, no server setup.
+Vercel will automatically detect Next.js and configure everything for you!
 
-## 🎯 Ready to Build Something Amazing?
+### Deploy on Other Platforms
 
-This frontend is designed to get out of your way so you can focus on building features that matter. The connection to your FastAPI backend just works, letting you focus on creating an awesome user experience.
+The site can be deployed to any platform that supports Next.js:
+- Netlify
+- AWS Amplify
+- Railway
+- Render
 
-Happy coding! 🎉
+## 🎯 Customization
 
-## 🔗 Learn More (If You Really Want To)
+### Changing Colors
+
+All orange colors can be customized in `app/page.tsx`. Search for `orange-` classes and replace with your preferred color.
+
+### Updating Content
+
+- **Candidates**: Edit the `candidates` array in `app/page.tsx`
+- **Testimonials**: Edit the `testimonials` array
+- **Steps**: Edit the `steps` array for the "How It Works" section
+
+### Replacing Hero Image
+
+Replace `public/hero-background.jpg` with your own image. The image should be:
+- Square aspect ratio (1:1) for best results
+- High resolution for crisp display
+- Optimized file size for fast loading
+
+## 📝 Tech Stack
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI)
+- **Image Handling**: Next.js Image optimization with custom fallback component
+
+## 🔗 Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [shadcn/ui Components](https://ui.shadcn.com/)
+
+## 📄 License
+
+© 2025 Tethered Technology Corporation
+
+---
+
+**Built with ❤️ for connecting world-class talent with forward-thinking companies.**

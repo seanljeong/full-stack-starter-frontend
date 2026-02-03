@@ -1,6 +1,7 @@
 {
-  "name": "full-stack-starter-frontend",
+  "name": "tethered-frontend",
   "version": "0.1.0",
+  "description": "Tethered - Global Talent Recruiting Platform Landing Page",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
