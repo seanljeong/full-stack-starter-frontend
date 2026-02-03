@@ -152,7 +152,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Our platform connects innovative companies with exceptional talent from around the globe. Through advanced matching, cultural alignment, and rigorous vetting, we're making world-class teams accessible to everyone.
+              Our platform connects innovative companies with exceptional talent from around the globe. Through advanced matching, cultural alignment, and rigorous vetting, we&apos;re making world-class teams accessible to everyone.
             </p>
             <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg shadow-lg">
               Learn More
@@ -249,7 +249,7 @@ export default function Home() {
                       <p className="text-sm text-slate-600">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-slate-700 leading-relaxed italic">"{testimonial.text}"</p>
+                  <p className="text-slate-700 leading-relaxed italic">&quot;{testimonial.text}&quot;</p>
                 </CardContent>
               </Card>
             ))}
@@ -283,7 +283,7 @@ export default function Home() {
           <div className="text-center mb-10">
             <p className="text-sm uppercase tracking-wider text-orange-600 font-semibold mb-4">GET THE DATA BEFORE YOU HIRE</p>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Get Our Free Global Salary Guide</h2>
-            <p className="text-slate-600 mb-6">What's Inside:</p>
+            <p className="text-slate-600 mb-6">What&apos;s Inside:</p>
             <ul className="space-y-3 text-slate-700 mb-8 text-left max-w-md mx-auto">
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center flex-shrink-0">
