@@ -1,135 +1,88 @@
-# 🌐 Tethered - Global Talent Recruiting Platform
+# Tethered – Clawdbot Setup & AI Consulting
 
-A modern, beautiful Next.js landing page for Tethered, a global talent recruiting platform that connects companies with world-class remote professionals.
+A Next.js marketing site for **Tethered**, an AI consulting and agent-setup company that professionally deploys and maintains **Clawdbot** — the open-source AI assistant that runs on your hardware and acts as a digital employee across email, calendar, Slack, CRM, and more.
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern Design** - Clean, minimalist design with pixel art hero image
-- 🎯 **Orange Color Scheme** - Solid orange accents throughout for a cohesive brand experience
-- 📱 **Fully Responsive** - Looks great on all devices
-- ⚡ **Next.js 15** - Built with the latest Next.js features
-- 🔷 **TypeScript** - Fully typed for better developer experience
-- 🎭 **Tailwind CSS + shadcn/ui** - Beautiful, accessible UI components
-- 🖼️ **Image Optimization** - Automatic image fallbacks and optimization
+- **Tethered brand** – Copy and structure built around “tethered to the future,” “tethered to AI,” and “tethered to peace of mind”
+- **Clawdbot-focused** – Explains what Clawdbot is, why professional setup matters, and how deployment works
+- **Clear sections** – Hero, What You’re Setting Up, Why Setup Matters (4 pillars), Managed Monitoring, DIY vs. Tethered, How It Works, Pricing, Testimonials, CTA & Contact
+- **Responsive** – Layout and typography tuned for desktop and mobile
+- **Next.js 15** – App Router, React 19, Turbopack in dev
+- **TypeScript** – Typed components and data
+- **Tailwind CSS + shadcn/ui** – Consistent styling and accessible UI
 
-## 🏁 Getting Started
+## Getting Started
 
-### 1. Install Dependencies
+### 1. Install dependencies
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
-### 2. Run Development Server
+### 2. Run the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the site!
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## 🎨 Design Highlights
+## Site structure (content)
 
-### Hero Section
-- Split layout with text on the left and pixel art image on the right
-- Square aspect ratio for the hero image
-- Clean typography with refined spacing
+| Section | Purpose |
+|--------|---------|
+| **Hero** | Headline (“Your Clawdbot setup, done right the first time”), value prop, CTAs, trust stats |
+| **What you’re setting up** | Clawdbot as “digital employee” and list of capabilities (inbox, calendar, research, scripts, memory) |
+| **Why setup matters** | “Where most people get stuck” + 4 pillars: Configuration, Wiring, Tuning, Hardening |
+| **Managed monitoring** | Optional TetheredCare and ops-center monitoring |
+| **DIY vs. Tethered** | Honest comparison: going it alone vs. with Tethered |
+| **How it works** | 5 steps: Discovery → Build & Harden → Go Live → 14‑Day TetheredCare → Managed Care |
+| **Pricing** | In-Person VIP, Remote, Additional Agent; Tethered Care plans (Basic, Super, Enterprise) |
+| **Testimonials** | Social proof (industry / founder / ops quotes) |
+| **CTA & Contact** | Book setup call, free consultation, email, location (Austin, TX; worldwide remote) |
 
-### Color Palette
-- **Primary**: Orange (`orange-500`, `orange-600`)
-- **Background**: Light orange tint (`orange-50`)
-- **Text**: Slate grays for readability
-- **Accents**: Solid orange throughout (no gradients)
-
-### Key Sections
-1. **Hero** - Main value proposition with pixel art visual
-2. **Mission** - Company mission and vision
-3. **How It Works** - Three-step process (Target, Recruit, Validate)
-4. **Talent Showcase** - Featured candidates with profiles
-5. **Testimonials** - Client success stories
-6. **CTA** - Call-to-action for getting started
-7. **Newsletter** - Salary guide signup form
-
-## 📁 Project Structure
+## Project structure
 
 ```
 full-stack-starter-frontend/
 ├── app/
-│   ├── page.tsx            # Main landing page
-│   ├── layout.tsx          # Root layout with metadata
-│   └── globals.css          # Global styles
+│   ├── page.tsx          # Landing page (all sections)
+│   ├── layout.tsx        # Root layout and metadata
+│   └── globals.css       # Global styles
 ├── components/
-│   ├── ui/                  # shadcn/ui components
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   └── input.tsx
-│   └── image-with-fallback.tsx  # Image component with fallback
+│   └── ui/               # shadcn/ui (button, card, etc.)
 ├── public/
-│   └── hero-background.jpg  # Pixel art hero image
+│   └── hero-background.jpg   # Hero / lander image (pixel art)
 ├── lib/
-│   └── utils.ts            # Utility functions
-└── types/                  # TypeScript definitions
+│   └── utils.ts
+└── types/
 ```
 
-## 🚀 Deployment
+## Deployment
 
-### Deploy on Vercel
+- **Vercel**: Push to GitHub and import the repo at [vercel.com/new](https://vercel.com/new). Next.js is auto-detected.
+- **Other**: Any platform that supports Next.js (Netlify, AWS Amplify, Railway, Render, etc.) works with `npm run build` and `npm run start`.
 
-1. Push your code to GitHub
-2. Import to [Vercel](https://vercel.com/new)
-3. Click "Deploy" 🚀
+## Customization
 
-Vercel will automatically detect Next.js and configure everything for you!
+- **Copy and pricing** – Edit the strings and arrays in `app/page.tsx` (e.g. `deploymentSteps`, `pillars`, `packages`, `carePlans`, `testimonials`).
+- **Hero image** – Replace `public/hero-background.jpg`; the hero uses a square-ish area with `object-cover`.
+- **Booking / contact** – Update the Cal.com (or other) links and contact details in the CTA section and footer.
 
-### Deploy on Other Platforms
+## Tech stack
 
-The site can be deployed to any platform that supports Next.js:
-- Netlify
-- AWS Amplify
-- Railway
-- Render
-
-## 🎯 Customization
-
-### Changing Colors
-
-All orange colors can be customized in `app/page.tsx`. Search for `orange-` classes and replace with your preferred color.
-
-### Updating Content
-
-- **Candidates**: Edit the `candidates` array in `app/page.tsx`
-- **Testimonials**: Edit the `testimonials` array
-- **Steps**: Edit the `steps` array for the "How It Works" section
-
-### Replacing Hero Image
-
-Replace `public/hero-background.jpg` with your own image. The image should be:
-- Square aspect ratio (1:1) for best results
-- High resolution for crisp display
-- Optimized file size for fast loading
-
-## 📝 Tech Stack
-
-- **Framework**: Next.js 15
+- **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui (Radix UI)
-- **Image Handling**: Next.js Image optimization with custom fallback component
+- **UI**: shadcn/ui (Radix primitives)
 
-## 🔗 Learn More
+## Links
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Components](https://ui.shadcn.com/)
-
-## 📄 License
-
-© 2025 Tethered Technology Corporation
+- [Next.js docs](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [shadcn/ui](https://ui.shadcn.com/)
 
 ---
 
-**Built with ❤️ for connecting world-class talent with forward-thinking companies.**
+© 2025 Tethered. Clawdbot deployment, done right.
