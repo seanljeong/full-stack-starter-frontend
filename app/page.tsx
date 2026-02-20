@@ -16,7 +16,7 @@ const deploymentSteps = [
   },
   {
     title: '14‑Day TetheredCare',
-    description: 'Priority support and tuning via a dedicated Slack channel. We fix issues, refine prompts, and make sure you’re fully tethered to peace of mind.',
+    description: 'Priority support and tuning via a dedicated Slack channel. We fix issues, refine prompts, and make sure you&apos;re fully tethered to peace of mind.',
   },
   {
     title: 'Managed Care',
@@ -84,7 +84,7 @@ const testimonials = [
   {
     name: 'Operations Lead',
     role: 'E-commerce',
-    text: 'Our Clawdbot triages support emails and drafts replies. With Tethered’s hardening and TetheredCare, we’re confident it’s secure and we have someone to call when we need to tune it.',
+    text: 'Our Clawdbot triages support emails and drafts replies. With Tethered&apos;s hardening and TetheredCare, we&apos;re confident it&apos;s secure and we have someone to call when we need to tune it.',
   },
 ]
 
@@ -170,7 +170,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What You're Setting Up */}
+      {/* What You&apos;re Setting Up */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white/50" id="what-you-get">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
