@@ -1,59 +1,90 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { ImageWithFallback } from '@/components/image-with-fallback'
 
-const candidates = [
+const deploymentSteps = [
   {
-    name: 'Roberto G.',
-    role: 'Senior AI Developer',
-    country: 'Argentina',
-    salary: '$8000/month',
+    title: 'Discovery',
+    description: 'We learn your business, workflows, and goals. Then we design a tailored Clawdbot deployment—model choice, skills, and integrations—so your AI employee fits how you work.',
   },
   {
-    name: 'Sebastian B.',
-    role: 'RITE AWS Developer',
-    country: 'Peru',
-    salary: '$2000/month',
+    title: 'Build & Harden',
+    description: 'We install Clawdbot on your hardware, wire email, calendar, CRM, and more. We engineer prompts around your workflows and lock down security before you go live.',
   },
   {
-    name: 'Nathalia G.',
-    role: 'Junior Media Buyer',
-    country: 'Brazil',
-    salary: '$2000/month',
+    title: 'Go Live',
+    description: 'Your assistant is usable the same day. We walk your team through it so everyone knows how to get the most out of your new AI employee.',
   },
+  {
+    title: '14‑Day TetheredCare',
+    description: 'Priority support and tuning via a dedicated Slack channel. We fix issues, refine prompts, and make sure you’re fully tethered to peace of mind.',
+  },
+  {
+    title: 'Managed Care',
+    description: 'Optional ongoing monitoring, updates, and new workflows. Every machine reports to our operations center—fleet health, security, and service status in real time.',
+  },
+]
+
+const pillars = [
+  {
+    title: 'Configuration',
+    description: 'Choosing the right model for your budget and use case, selecting skills, and designing integrations so your Clawdbot does exactly what you need.',
+  },
+  {
+    title: 'Wiring',
+    description: 'Connecting email, calendar, CRM, messaging, and databases. We ensure end‑to‑end testing so every integration works before handoff.',
+  },
+  {
+    title: 'Tuning',
+    description: 'Engineering prompts around your specific workflows, tuning memory, and managing API costs so your AI employee performs reliably and affordably.',
+  },
+  {
+    title: 'Hardening',
+    description: 'Locking down access controls, hardening the server, restricting tool permissions, and auditing everything so your deployment is secure from day one.',
+  },
+]
+
+const packages = [
+  {
+    name: 'Tethered In‑Person VIP Deployment',
+    price: '$2,400',
+    priceNote: 'Launch special: $1,200',
+    description: 'We come to your city and deploy a fully hardened Clawdbot on a dedicated machine. Includes discovery, configuration, integrations, security hardening, hands‑on training, and 14‑day TetheredCare. Hardware not included.',
+  },
+  {
+    name: 'Tethered Remote Deployment',
+    price: '$1,200',
+    priceNote: 'Launch discount: $600',
+    description: 'Full Clawdbot deployment over a call on your hardware (Mac Mini/home server) or cloud VPS. Includes discovery, configuration, integrations, security hardening, training, and 14‑day TetheredCare. Available worldwide.',
+  },
+  {
+    name: 'Additional Agent',
+    price: '$1,200',
+    priceNote: 'per agent',
+    description: 'Deploy another Clawdbot instance for a separate identity (e.g., CEO, CFO, or shared inbox). Same hardening, configuration, and 14‑day TetheredCare.',
+  },
+]
+
+const carePlans = [
+  { name: 'Basic Care', agents: '1–2 agents', price: '$500/month' },
+  { name: 'Super Care', agents: 'Up to 5 agents', price: '$2,000/month' },
+  { name: 'Enterprise Care', agents: 'Unlimited agents', price: 'From $5,000/month', note: 'Dedicated account manager, weekly strategy calls, compliance reporting' },
 ]
 
 const testimonials = [
   {
-    name: 'Meesh & Dee',
-    role: 'Founders',
-    text: 'Working with Tethered was a fantastic experience. They guided us through every step of the hiring process and helped us find Tomas, our amazing full-stack developer. He\'s been with us for the past four months and has become an integral part of our team—super reliable, talented, and a true joy to work with.',
+    name: 'Andrej Karpathy',
+    role: 'AI researcher, former Tesla AI',
+    text: 'The future of work is agents that actually do the work. Clawdbot represents that direction—autonomous, connected, and running where you control it.',
   },
   {
-    name: 'Trey I.',
-    role: 'CEO',
-    text: 'Within the first two candidates, I found one guy who was completely perfect for the role. I didn\'t even end up interviewing the second candidate. I just hired the first guy because I knew there wasn\'t going to be anyone else with the exact experience and additional skills I was interested in.',
+    name: 'Series A Founder',
+    role: 'SaaS, 40-person team',
+    text: 'We tried to set up our own Clawdbot and lost a week to config and security headaches. Tethered had us live in a day with prompts that matched our workflows. Worth every penny.',
   },
   {
-    name: 'Troy M.',
-    role: 'Founder',
-    text: 'I can\'t speak highly enough about Tethered Recruiting. As a small business owner, finding the right talent is crucial. They not only understood our specific staffing needs but also delivered exceptional candidates promptly.',
-  },
-]
-
-const steps = [
-  {
-    title: 'Target',
-    description: 'Define your ideal candidate profile with our team. We understand your needs, company culture, and specific requirements to create the perfect hiring blueprint.',
-  },
-  {
-    title: 'Recruit',
-    description: 'Our expert recruiters search globally, reaching out to top talent across every major platform. We screen thousands of candidates so you don\'t have to.',
-  },
-  {
-    title: 'Validate',
-    description: 'Every candidate undergoes rigorous skill assessments, multiple interview rounds, and reference checks. Only the top 0.2% make it to you.',
+    name: 'Operations Lead',
+    role: 'E-commerce',
+    text: 'Our Clawdbot triages support emails and drafts replies. With Tethered’s hardening and TetheredCare, we’re confident it’s secure and we have someone to call when we need to tune it.',
   },
 ]
 
@@ -70,12 +101,13 @@ export default function Home() {
               </a>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">Company</a>
-              <a href="#" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">Technology</a>
-              <a href="#" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">Talent</a>
-              <a href="#" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">FAQs</a>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-lg">
-                Get Started
+              <a href="#what-you-get" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">What You Get</a>
+              <a href="#why-setup" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">Why Setup Matters</a>
+              <a href="#how-it-works" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">How It Works</a>
+              <a href="#pricing" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">Pricing</a>
+              <a href="#contact" className="text-slate-700 hover:text-orange-600 transition-colors text-sm font-medium">Contact</a>
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-lg" asChild>
+                <a href="#contact">Book Your Setup</a>
               </Button>
             </div>
             <div className="md:hidden">
@@ -89,50 +121,47 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Split Layout */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20" id="hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
-            {/* Left Side - Text Content */}
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  Connect with world-class talent
+                  Your Clawdbot setup, done right the first time — tether your business to the future of AI.
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg font-light">
-                  Scale your team with top global professionals. We connect you with the best talent, anywhere in the world.
+                  Tethered professionally deploys and maintains Clawdbot: the AI assistant that clears your inbox, manages your calendar, researches topics, monitors systems, and remembers your preferences. It runs on your hardware, with security hardening and ongoing care.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-5 border-0 shadow-lg text-base">
-                  Get Started
+                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-5 border-0 shadow-lg text-base" asChild>
+                  <a href="#contact">Book Your Setup Call</a>
                 </Button>
-                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-50 border-2 border-slate-300 px-6 py-5 shadow-md text-base">
-                  Learn More
+                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-50 border-2 border-slate-300 px-6 py-5 shadow-md text-base" asChild>
+                  <a href="#what-you-get">What You&apos;re Getting</a>
                 </Button>
               </div>
               <div className="flex items-center gap-6 pt-2">
                 <div>
-                  <div className="text-2xl font-bold text-slate-900">80%</div>
-                  <div className="text-xs text-slate-500 font-medium">Cost Savings</div>
+                  <div className="text-2xl font-bold text-slate-900">Open source</div>
+                  <div className="text-xs text-slate-500 font-medium">MIT-licensed</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-slate-900">14 Days</div>
-                  <div className="text-xs text-slate-500 font-medium">Avg. Time</div>
+                  <div className="text-2xl font-bold text-slate-900">Your hardware</div>
+                  <div className="text-xs text-slate-500 font-medium">Privacy & control</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-slate-900">99.7%</div>
-                  <div className="text-xs text-slate-500 font-medium">Vetted</div>
+                  <div className="text-2xl font-bold text-slate-900">Live in a day</div>
+                  <div className="text-xs text-slate-500 font-medium">With Tethered</div>
                 </div>
               </div>
             </div>
-            
-            {/* Right Side - Square Pixel Art Image */}
             <div className="relative w-full aspect-square flex items-center justify-center">
               <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl border border-slate-200">
-                <img 
-                  src="/hero-background.jpg" 
-                  alt="Creative workspace" 
+                <img
+                  src="/hero-background.jpg"
+                  alt="Person on a hill with laptop, tethered by golden lines to the sky — tether your business to the future of AI"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -141,41 +170,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white/50">
+      {/* What You're Setting Up */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white/50" id="what-you-get">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
-              Building the Future of{' '}
-              <span className="text-orange-500">
-                Remote Work
-              </span>
-            </h2>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Our platform connects innovative companies with exceptional talent from around the globe. Through advanced matching, cultural alignment, and rigorous vetting, we&apos;re making world-class teams accessible to everyone.
-            </p>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg shadow-lg">
-              Learn More
-            </Button>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            What you&apos;re setting up
+          </h2>
+          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+            Clawdbot isn&apos;t just another chatbot. It&apos;s a cutting‑edge, autonomous AI employee that acts across email, calendar, Slack, CRM, code, and more. Think of it as a digital employee that actually does work.
+          </p>
+          <ul className="space-y-4 text-slate-700 text-lg">
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 mt-1">•</span>
+              <span><strong>Triage your inbox</strong> and draft replies so you focus on what matters.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 mt-1">•</span>
+              <span><strong>Schedule meetings</strong> and resolve conflicts across calendars.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 mt-1">•</span>
+              <span><strong>Research topics</strong> and deliver formatted reports on demand.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 mt-1">•</span>
+              <span><strong>Monitor systems</strong>, run scripts, and push code—safely and audited.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 mt-1">•</span>
+              <span><strong>Remember every conversation</strong> and learn your preferences over time.</span>
+            </li>
+          </ul>
+          <p className="text-slate-600 mt-8">
+            New skills are shipped regularly by the open‑source community. Once you&apos;re tethered to Clawdbot, you stay ahead without starting from scratch.
+          </p>
         </div>
       </section>
 
-      {/* Technology Process */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-50/30">
+      {/* Why Professional Setup Matters */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-50/30" id="why-setup">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-16 text-center">
-            How It Works
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Clawdbot setup is where most people get stuck
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
+          <p className="text-xl text-slate-600 max-w-3xl mb-12">
+            The open‑source software is free. But proper setup requires server configuration, security hardening, API integration, and custom prompt engineering. We do that so you don&apos;t have to.
+          </p>
+          <p className="text-lg font-semibold text-slate-800 mb-8">The four pillars of a proper deployment:</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {pillars.map((pillar, index) => (
               <Card key={index} className="border-2 border-orange-200 bg-white hover:shadow-xl transition-all hover:border-orange-400">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                    <span className="text-3xl font-bold text-white">{index + 1}</span>
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-orange-400 rounded-xl flex items-center justify-center mb-4 text-white font-bold">
+                    {index + 1}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{pillar.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{pillar.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -183,41 +233,121 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Talent Showcase */}
+      {/* Managed Monitoring */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Our Talent
-            </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              Real professionals from our global network, ready to join your team.
-            </p>
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Managed monitoring — tethered to peace of mind
+          </h2>
+          <p className="text-xl text-slate-600 leading-relaxed mb-6">
+            Tethered offers optional managed monitoring plans (TetheredCare). Every machine reports back to our operations center: fleet health, security baselines, and service status in real time. When something drifts, we catch it before you do.
+          </p>
+          <p className="text-slate-600">
+            Stay tethered to the future without watching the dashboard yourself.
+          </p>
+        </div>
+      </section>
+
+      {/* Honest Truth: DIY vs. Tethered */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-50/50" id="honest-truth">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 text-center">
+            The honest truth: DIY vs. Tethered
+          </h2>
+          <p className="text-xl text-slate-600 text-center max-w-3xl mx-auto mb-12">
+            Going it alone has a real cost. Here&apos;s the comparison.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-2 border-slate-200 bg-white">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">Going it alone</h3>
+                <ul className="space-y-3 text-slate-600">
+                  <li>20–40 hours of configuration and troubleshooting</li>
+                  <li>Wrong model choices and wasted API spend</li>
+                  <li>Security gaps that could have been avoided</li>
+                  <li>Trial‑and‑error prompting with no best practices</li>
+                  <li>Half‑working integrations and silent failures</li>
+                  <li>No one to call when it goes down</li>
+                </ul>
+                <p className="mt-6 text-slate-700 font-medium">
+                  The real expense? Wasted time and potential security breaches.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-orange-300 bg-orange-50/50">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">With Tethered</h3>
+                <ul className="space-y-3 text-slate-700">
+                  <li><strong>Live in a day</strong> — we handle build and config</li>
+                  <li><strong>Right model selection</strong> for your budget and use case</li>
+                  <li><strong>Hardened and audited</strong> server before handoff</li>
+                  <li><strong>Prompts engineered</strong> around how your business works</li>
+                  <li><strong>Tested integrations</strong> so everything works end‑to‑end</li>
+                  <li><strong>Dedicated support</strong> — someone to call when you need to tune or fix</li>
+                </ul>
+                <p className="mt-6 text-orange-700 font-medium">
+                  Tether your business to AI the right way.
+                </p>
+              </CardContent>
+            </Card>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {candidates.map((candidate, index) => (
-              <Card key={index} className="border-2 border-orange-100 bg-orange-50/30 hover:shadow-xl transition-all hover:border-orange-300">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-orange-200">
-                      <ImageWithFallback
-                        src={`https://images.unsplash.com/photo-${1500000000000 + index}?w=200&h=200&fit=crop&crop=faces`}
-                        alt={candidate.name}
-                        className="w-full h-full object-cover"
-                        name={candidate.name}
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-slate-900 mb-1">{candidate.name}</h3>
-                      <p className="text-sm text-slate-600 mb-2">{candidate.role}</p>
-                      <p className="text-xs text-slate-500">{candidate.country}</p>
-                    </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white" id="how-it-works">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-16 text-center">
+            How it works
+          </h2>
+          <div className="space-y-6">
+            {deploymentSteps.map((step, index) => (
+              <Card key={index} className="border-2 border-orange-200 bg-white hover:shadow-xl transition-all hover:border-orange-400">
+                <CardContent className="p-8 flex flex-col sm:flex-row gap-6 items-start">
+                  <div className="w-14 h-14 bg-orange-400 rounded-2xl flex items-center justify-center flex-shrink-0 text-white font-bold text-lg">
+                    {index + 1}
                   </div>
-                  <div className="pt-4 border-t border-orange-100">
-                    <p className="text-2xl font-bold text-orange-600">
-                      {candidate.salary}
-                    </p>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{step.description}</p>
                   </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing & Packages */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-50/30" id="pricing">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 text-center">
+            Pricing & packages
+          </h2>
+          <p className="text-xl text-slate-600 text-center max-w-2xl mx-auto mb-12">
+            One-time deployments and optional ongoing care. Hardware not included (e.g. Mac Mini from ~$599).
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {packages.map((pkg, index) => (
+              <Card key={index} className="border-2 border-orange-200 bg-white hover:shadow-xl transition-all">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{pkg.name}</h3>
+                  <p className="text-2xl font-bold text-orange-600 mb-1">{pkg.price}</p>
+                  <p className="text-sm text-slate-500 mb-4">{pkg.priceNote}</p>
+                  <p className="text-slate-600 leading-relaxed flex-1">{pkg.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Tethered Care Plans (ongoing support)</h3>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {carePlans.map((plan, index) => (
+              <Card key={index} className="border-2 border-orange-100 bg-white">
+                <CardContent className="p-6 text-center">
+                  <p className="font-bold text-slate-900">{plan.name}</p>
+                  <p className="text-sm text-slate-600">{plan.agents}</p>
+                  <p className="text-xl font-bold text-orange-600 mt-2">{plan.price}</p>
+                  {plan.note && <p className="text-xs text-slate-500 mt-2">{plan.note}</p>}
                 </CardContent>
               </Card>
             ))}
@@ -226,23 +356,18 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-50/50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-16 text-center">
-            Trusted by Leaders
+            What leaders say
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-2 border-yellow-200 bg-white hover:shadow-xl transition-all">
+              <Card key={index} className="border-2 border-orange-100 bg-orange-50/30 hover:shadow-xl transition-all">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-orange-200 flex-shrink-0">
-                      <ImageWithFallback
-                        src={`https://images.unsplash.com/photo-${1470000000000 + index}?w=200&h=200&fit=crop&crop=faces`}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        name={testimonial.name}
-                      />
+                    <div className="w-12 h-12 rounded-full bg-orange-200 flex-shrink-0 flex items-center justify-center text-orange-600 font-bold">
+                      {testimonial.name.charAt(0)}
                     </div>
                     <div>
                       <p className="font-bold text-slate-900">{testimonial.name}</p>
@@ -257,8 +382,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-500 text-white relative overflow-hidden">
+      {/* CTA & Contact */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-orange-500 text-white relative overflow-hidden" id="contact">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -266,61 +391,24 @@ export default function Home() {
         </div>
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your Global Team?
+            Tether your business to the future of AI
           </h2>
-          <p className="text-xl text-orange-50 mb-10 max-w-2xl mx-auto">
-            Join hundreds of companies scaling faster with world-class remote talent.
+          <p className="text-xl text-orange-50 mb-6 max-w-2xl mx-auto">
+            Book your setup call and get a Clawdbot that actually works—deployed, hardened, and supported by Tethered.
           </p>
-          <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 text-lg px-10 py-7 shadow-2xl font-bold">
-            Get Started Today
-          </Button>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-10">
-            <p className="text-sm uppercase tracking-wider text-orange-600 font-semibold mb-4">GET THE DATA BEFORE YOU HIRE</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Get Our Free Global Salary Guide</h2>
-            <p className="text-slate-600 mb-6">What&apos;s Inside:</p>
-            <ul className="space-y-3 text-slate-700 mb-8 text-left max-w-md mx-auto">
-              <li className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                Salary Benchmarks by Role & Country
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                Negotiation Tips & Cost-Saving Strategies
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                Payroll & Compliance Insights
-              </li>
-            </ul>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 text-lg px-10 py-7 shadow-2xl font-bold" asChild>
+              <a href="https://cal.com/tethered" target="_blank" rel="noopener noreferrer">Book Your Setup Call</a>
+            </Button>
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-7 font-bold" asChild>
+              <a href="https://cal.com/tethered/consultation" target="_blank" rel="noopener noreferrer">Not sure which plan? Free consultation</a>
+            </Button>
           </div>
-          <Card className="border-2 border-orange-200 bg-orange-50/30 shadow-xl">
-            <CardContent className="p-8">
-              <form className="space-y-4">
-                <Input type="email" placeholder="Enter your email" className="w-full h-12 bg-white border-2 border-orange-200 focus:border-orange-400 text-slate-900" />
-                <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 font-bold shadow-lg">
-                  Get Free Guide
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <div className="text-orange-100 text-lg space-y-2">
+            <p><a href="mailto:hello@tethered.so" className="underline hover:text-white">hello@tethered.so</a></p>
+            <p>@tethered (Twitter / X)</p>
+            <p><strong className="text-white">Austin, TX</strong> for in‑person deployments • Remote deployments available worldwide</p>
+          </div>
         </div>
       </section>
 
@@ -329,42 +417,43 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h4 className="font-bold mb-4 text-orange-400">Company</h4>
+              <h4 className="font-bold mb-4 text-orange-400">Tethered</h4>
+              <p className="text-sm text-slate-400">
+                Professional Clawdbot deployment and support. Tether your business to the future of AI.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4 text-orange-400">Services</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-orange-400">About</a></li>
-                <li><a href="#" className="hover:text-orange-400">Careers</a></li>
-                <li><a href="#" className="hover:text-orange-400">Contact</a></li>
+                <li><a href="#what-you-get" className="hover:text-orange-400">What You Get</a></li>
+                <li><a href="#why-setup" className="hover:text-orange-400">Why Setup Matters</a></li>
+                <li><a href="#how-it-works" className="hover:text-orange-400">How It Works</a></li>
+                <li><a href="#pricing" className="hover:text-orange-400">Pricing</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-orange-400">Technology</h4>
+              <h4 className="font-bold mb-4 text-orange-400">Clawdbot</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-orange-400">How It Works</a></li>
-                <li><a href="#" className="hover:text-orange-400">Platform</a></li>
-                <li><a href="#" className="hover:text-orange-400">Features</a></li>
+                <li>Open-source, MIT-licensed</li>
+                <li>Runs on your hardware</li>
+                <li>Privacy and control</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-orange-400">Resources</h4>
+              <h4 className="font-bold mb-4 text-orange-400">Contact</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-orange-400">FAQs</a></li>
-                <li><a href="#" className="hover:text-orange-400">Salary Guide</a></li>
-                <li><a href="#" className="hover:text-orange-400">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-orange-400">Get in touch</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="mailto:hire@tethered.so" className="hover:text-orange-400">hire@tethered.so</a></li>
+                <li><a href="mailto:hello@tethered.so" className="hover:text-orange-400">hello@tethered.so</a></li>
+                <li>@tethered</li>
+                <li>Austin, TX • Worldwide remote</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-slate-400 mb-4 md:mb-0">
-              © 2025 Tethered Technology Corporation
+              © 2025 Tethered. Clawdbot deployment, done right.
             </p>
             <p className="text-sm text-slate-400">
-              Connecting talent, anywhere in the world.
+              Tethered to the future. Tethered to AI. Tethered to peace of mind.
             </p>
           </div>
         </div>
